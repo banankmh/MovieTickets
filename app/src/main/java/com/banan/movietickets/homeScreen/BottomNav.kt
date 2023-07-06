@@ -4,7 +4,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.BottomAppBar
@@ -17,18 +16,18 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.banan.movietickets.R
-import com.banan.movietickets.ui.theme.buttonColor
+import com.banan.movietickets.ui.theme.orangeColor
 
 @Preview
 @Composable
 fun BottomNavigation() {
     BottomAppBar(
-        containerColor = Color.White,
         contentPadding = PaddingValues(start = 16.dp, end = 16.dp),
         modifier = Modifier.fillMaxWidth(),
+        containerColor = Color.Unspecified
     ) {
         Row(
-            modifier = Modifier.fillMaxWidth().height(72.dp),
+            modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceAround,
             verticalAlignment = Alignment.CenterVertically,
 
@@ -44,7 +43,7 @@ fun BottomNavigation() {
 @Composable
 fun BottomAppBarItem(drawableResId: Int, selected: Boolean) {
     val iconTint = if (selected) Color.White else Color.Black
-    val backgroundColor = if (selected) buttonColor else Color.Transparent
+    val backgroundColor = if (selected) orangeColor else Color.Transparent
     val image = painterResource(drawableResId)
 
     Box(
