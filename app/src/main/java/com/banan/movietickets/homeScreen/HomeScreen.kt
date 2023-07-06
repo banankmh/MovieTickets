@@ -38,20 +38,22 @@ fun HomeScreenFile() {
                 textColor = Color.White,
                 borderColor = Color.Transparent,
                 buttonColor = orangeColor,
-                onClick ={}
+                onClick = {}
             )
             spacingHorizontal(8)
             ButtonStyle(
-                text =stringResource(R.string.coming_soon),
+                text = stringResource(R.string.coming_soon),
                 textColor = orangeColor,
-                buttonColor= Color.Transparent,
-                onClick ={} )
+                buttonColor = Color.Transparent,
+                onClick = {})
         }
         spacingTop(32)
-        Box(modifier = Modifier
+        Box(
+            modifier = Modifier
                 .height(395.dp)
                 .fillMaxWidth()
-                .weight(1f)) { ViewPager() }
+                .weight(1f)
+        ) { ViewPager() }
         spacingTop(24)
         Row(verticalAlignment = Alignment.CenterVertically) {
             Image(
@@ -67,11 +69,19 @@ fun HomeScreenFile() {
         TitleLarge(text = stringResource(R.string.fantastic_beasts_the_secrets_of_dumbledore))
         Row(Modifier.padding(top = 24.dp)) {
 
-            Chip(stringResource(R.string.fantasy),chipColor = Color.Unspecified, textColor = Color.Black)
+            Chip(
+                stringResource(R.string.fantasy),
+                chipColor = Color.Unspecified,
+                textColor = Color.Black
+            )
 
             spacingHorizontal(4)
 
-            Chip(stringResource(R.string.adventure),chipColor = Color.Unspecified, textColor = Color.Black)
+            Chip(
+                stringResource(R.string.adventure),
+                chipColor = Color.Unspecified,
+                textColor = Color.Black
+            )
         }
         spacingTop(40)
         BottomNavigation()
