@@ -6,4 +6,12 @@
     <string name="adventure">Adventure</string>
     <string name="fantastic_beasts_the_secrets_of_dumbledore">Fantastic Beasts: The\nSecrets of Dumbledore</string>
     <string name="_2h_23m">2h 23m</string>
+    <string name="imdb">IMDb</string>
+    <string name="rotten_tomatoes">Rotten Tomatoes</string>
+    <string name="ign">IGN</string>
+    <string name="_4_10">4/10</string>
+    <string name="_63">63%</string>
+    <string name="_6_8_10">6.8/10</string>
+    <string name="description">Professor Albus Dumbledore knows the powerful, dark wizard Gellert Grindelwald is moving to seize control .</string>
+    <string name="booking">Booking</string>
 </resources>

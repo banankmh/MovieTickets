@@ -16,5 +16,10 @@ fun spacingTop(spacing:Int) {
     Spacer(modifier = Modifier.padding(top = spacing.dp))
 }
 
+@Composable
+fun spacingBottom(spacing:Int) {
+    Spacer(modifier = Modifier.padding(bottom = spacing.dp))
+}
+
 
 

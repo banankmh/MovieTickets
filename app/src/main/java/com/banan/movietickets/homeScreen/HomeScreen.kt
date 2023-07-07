@@ -2,7 +2,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -19,7 +18,7 @@ import com.banan.movietickets.ButtonStyle
 import com.banan.movietickets.R
 import com.banan.movietickets.Title
 import com.banan.movietickets.TitleLarge
-import com.banan.movietickets.homeScreen.Chip
+import com.banan.movietickets.Chip
 import com.banan.movietickets.homeScreen.ViewPager
 import com.banan.movietickets.spacingHorizontal
 import com.banan.movietickets.spacingTop
