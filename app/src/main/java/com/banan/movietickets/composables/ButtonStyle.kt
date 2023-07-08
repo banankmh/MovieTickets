@@ -1,4 +1,4 @@
-package com.banan.movietickets
+package com.banan.movietickets.composables
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.material3.Button

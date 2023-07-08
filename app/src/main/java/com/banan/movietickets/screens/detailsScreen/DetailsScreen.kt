@@ -1,5 +1,7 @@
-package com.banan.movietickets.detailsScreen
+package com.banan.movietickets.screens.detailsScreen
 
+import com.banan.movietickets.composables.BookingButton
+import com.banan.movietickets.composables.Chips
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -10,7 +12,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -26,32 +27,28 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
-import com.banan.movietickets.BookingButton
-import com.banan.movietickets.Chip
-import com.banan.movietickets.ColoredText
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
+import com.banan.movietickets.composables.CloseIcon
+import com.banan.movietickets.composables.ColoredText
 import com.banan.movietickets.R
-import com.banan.movietickets.Title
-import com.banan.movietickets.TitleLarge
-import com.banan.movietickets.spacingHorizontal
-import com.banan.movietickets.spacingTop
-import com.banan.movietickets.ui.theme.OrangeBlur
+import com.banan.movietickets.composables.Title
+import com.banan.movietickets.composables.TitleLarge
+import com.banan.movietickets.composables.spacingHorizontal
+import com.banan.movietickets.composables.spacingTop
 import com.banan.movietickets.ui.theme.TealBlur
 import com.banan.movietickets.ui.theme.orangeColor
 
-@Preview(showSystemUi = true)
 @Composable
-fun DetailsScreen() {
+fun DetailsScreen(navController: NavController) {
 
-    ConstraintLayout(
-        modifier = Modifier
-            .fillMaxWidth()
-    ) {
+    ConstraintLayout(modifier = Modifier.fillMaxSize()) {
         val (
             close, time, play,
             movieImage, details
         ) = createRefs()
 
-        ///region Image
+        ///region poster image
         Image(
             painter = painterResource(id = R.drawable.movie_details),
             contentDescription = "movie image",
@@ -65,33 +62,13 @@ fun DetailsScreen() {
         ///endregion
 
         ///region close
-        Column(
-            modifier = Modifier
-                .height(39.dp)
-                .width(39.dp)
-                .wrapContentSize(Alignment.Center)
-                .constrainAs(close) {
-                    top.linkTo(parent.top, margin = 24.dp)
-                    start.linkTo(parent.start, margin = 16.dp)
-
-                }
-        ) {
-            Box(
-                modifier = Modifier
-                    .size(100.dp)
-                    .clip(CircleShape)
-                    .background(OrangeBlur)
-            ) {
-                Image(
-                    painter = painterResource(id = R.drawable.circle),
-                    contentDescription = "Close",
-                    modifier = Modifier
-                        .size(24.dp)
-                        .align(Alignment.Center)
-
-                )
-            }
-        }
+        CloseIcon(
+            modifier = Modifier.constrainAs(close) {
+                top.linkTo(parent.top, margin = 24.dp)
+                start.linkTo(parent.start, margin = 16.dp)
+            },
+            onClick = {}
+        )
         ///endregion
 
         ///region time
@@ -179,19 +156,23 @@ fun DetailsScreen() {
 
             Row(Modifier.padding(top = 8.dp)) {
 
-                Chip(
-                    stringResource(R.string.fantasy),
-                    chipColor = Color.Unspecified,
-                    textColor = Color.Black
+                Chips(
+                  text=stringResource(R.string.fantasy),
+                    unselectedChipColor = Color.White,
+                    unselectedTextColor = Color.Black,
+                    isSelected = false,
+                    onClick = {}
                 )
 
                 spacingHorizontal(4)
 
-                Chip(
+                Chips(
                     stringResource(R.string.adventure),
-                    chipColor = Color.Unspecified,
-                    textColor = Color.Black
-                )
+                    unselectedChipColor = Color.White,
+                    unselectedTextColor = Color.Black,
+                    isSelected = false,
+                    onClick = {}
+              )
             }
 
             spacingTop(spacing = 8)
@@ -204,7 +185,7 @@ fun DetailsScreen() {
 
             spacingTop(spacing = 8)
 
-            BookingButton()
+            BookingButton(text=stringResource(R.string.booking),onClick = {})
         }
         ///endregion
     }

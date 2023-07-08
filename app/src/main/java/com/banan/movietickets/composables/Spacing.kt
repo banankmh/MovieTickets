@@ -1,4 +1,4 @@
-package com.banan.movietickets
+package com.banan.movietickets.composables
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
@@ -9,6 +9,11 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun spacingHorizontal(spacing:Int) {
     Spacer(modifier = Modifier.padding(horizontal = spacing.dp))
+}
+
+@Composable
+fun spacingVertical(spacing:Int) {
+    Spacer(modifier = Modifier.padding(vertical = spacing.dp))
 }
 
 @Composable

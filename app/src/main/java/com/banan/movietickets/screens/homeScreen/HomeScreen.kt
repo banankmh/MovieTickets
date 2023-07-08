@@ -14,19 +14,25 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.banan.movietickets.ButtonStyle
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
+import com.banan.movietickets.composables.ButtonStyle
 import com.banan.movietickets.R
-import com.banan.movietickets.Title
-import com.banan.movietickets.TitleLarge
-import com.banan.movietickets.Chip
-import com.banan.movietickets.homeScreen.ViewPager
-import com.banan.movietickets.spacingHorizontal
-import com.banan.movietickets.spacingTop
+import com.banan.movietickets.composables.Chips
+import com.banan.movietickets.composables.Title
+import com.banan.movietickets.composables.TitleLarge
+import com.banan.movietickets.screens.homeScreen.ViewPager
+import com.banan.movietickets.composables.spacingHorizontal
+import com.banan.movietickets.composables.spacingTop
+import com.banan.movietickets.screens.homeScreen.HomeViewModel
 import com.banan.movietickets.ui.theme.orangeColor
+import dagger.hilt.android.lifecycle.HiltViewModel
 
-@Preview(showSystemUi = true)
 @Composable
-fun HomeScreenFile() {
+fun HomeScreenFile(
+    navController: NavController,
+    homeViewModel: HomeViewModel =hiltViewModel()
+) {
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -68,19 +74,22 @@ fun HomeScreenFile() {
         TitleLarge(text = stringResource(R.string.fantastic_beasts_the_secrets_of_dumbledore))
         Row(Modifier.padding(top = 24.dp)) {
 
-            Chip(
+            Chips(
                 stringResource(R.string.fantasy),
-                chipColor = Color.Unspecified,
-                textColor = Color.Black
+                unselectedChipColor = Color.White,
+                unselectedTextColor = Color.Black,
+                isSelected = false,
+                onClick = {}
             )
 
             spacingHorizontal(4)
 
-            Chip(
+            Chips(
                 stringResource(R.string.adventure),
-                chipColor = Color.Unspecified,
-                textColor = Color.Black
-            )
+                unselectedChipColor = Color.White,
+                unselectedTextColor = Color.Black,
+                isSelected = false,
+                onClick = {})
         }
         spacingTop(40)
         BottomNavigation()

@@ -1,4 +1,4 @@
-package com.banan.movietickets.detailsScreen
+package com.banan.movietickets.screens.detailsScreen
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.lazy.LazyRow

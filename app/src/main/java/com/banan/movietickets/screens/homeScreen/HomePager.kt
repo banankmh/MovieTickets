@@ -1,4 +1,4 @@
-package com.banan.movietickets.homeScreen
+package com.banan.movietickets.screens.homeScreen
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.ExperimentalFoundationApi
